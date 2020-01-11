@@ -1,14 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HelloWorld from '../components/HelloWorld.vue'
+import GoodsList from '../components/goods/List.vue'
+import Detail from '../components/goods/Detail.vue'
+import Desc from '../components/goods/Desc.vue'
+import Comment from '../components/goods/Comment.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    component: HelloWorld
+    path: '/goods/list',
+    component:GoodsList
+  },{
+    path: '/goods/detail/:id',
+    component:Detail
+  },{
+    path: '/goodsdesc/:id',
+    name:'/goodsdesc/',
+    component:Desc
   },
+  {
+    path: '/goodscomments/:id',
+    name:'/goodscomments/',
+    component:Comment
+  }
 ]
 
 const router = new VueRouter({
